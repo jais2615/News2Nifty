@@ -80,7 +80,8 @@ news2nifty/
 └── README.md            # You're here
 
 This project is for educational and research purposes only. It is not financial advice. Always do your own due diligence before making any investment.
+![Screenshot (417)](https://github.com/user-attachments/assets/481e77a2-4f57-43b6-8c1c-e242343aa380)
 
-![Screenshot (417)](https://github.com/user-attachments/assets/5e276329-f56d-4b36-83ab-5d7be0e4ff60)
-![Screenshot (418)](https://github.com/user-attachments/assets/235351b5-f2d0-4c29-b8b7-a8c4d6b74b0f)
+![Screenshot (418)](https://github.com/user-attachments/assets/02da2a03-6120-495d-8f31-528c4b3af0dc)
+
 Made by Jaismeen Kaur 230121030
