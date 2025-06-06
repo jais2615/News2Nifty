@@ -20,13 +20,13 @@
 
 Built and tested with **Python 3.9**  
 Install dependencies via `pip`:
-
+```
 vaderSentiment==3.3.2
 joblib==1.3.2
 streamlit==1.29.0
 tensorflow==2.9.1
 yfinance==0.2.31
-
+```
 ---
 
 ## 🚀 Quick Start
@@ -35,19 +35,22 @@ yfinance==0.2.31
 git clone https://github.com/yourusername/news2nifty.git
 cd news2nifty
 2. Install Required Packages
-```
+
 pip install required packages [Note:-Tensorflow is not yet available for python versions above 3.10 so it is suggested to use python 3.9
+```
 vaderSentiment==3.3.2
 joblib==1.3.2
 streamlit==1.29.0
 tensorflow==2.9.1
 yfinance==0.2.31
+```
 Note: You’ll also need the following files in the root directory:
-
+```
 model.h5 – Trained LSTM model
 
 scaler.pkl – MinMaxScaler used for feature scaling
 ```
+
 3. Run the Streamlit App
 ```
 streamlit run fin.py
@@ -75,11 +78,9 @@ news2nifty/
 ├── model.h5             # Pretrained LSTM model
 ├── scaler.pkl           # Feature scaler
 └── README.md            # You're here
-📍 Disclaimer![Screenshot (418)](https://github.com/user-attachments/assets/884e2473-6abf-4d22-8267-5c3987137956)
 
 This project is for educational and research purposes only. It is not financial advice. Always do your own due diligence before making any investment.
 
-📫 Contact
-Made by Jaismeen Kaur 230121030
 ![Screenshot (417)](https://github.com/user-attachments/assets/5e276329-f56d-4b36-83ab-5d7be0e4ff60)
 ![Screenshot (418)](https://github.com/user-attachments/assets/235351b5-f2d0-4c29-b8b7-a8c4d6b74b0f)
+Made by Jaismeen Kaur 230121030
