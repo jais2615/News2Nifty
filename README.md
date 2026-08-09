@@ -15,7 +15,7 @@
 - **Live Market Data** via YFinance
 - **Multi-page Streamlit Interface** with top navigation between Live Market Pulse, Analyze Impact, Price Chart, and Prediction History
 
-> **Note on indicators:** RSI and SMA are fed into the LSTM prediction model. MACD and Bollinger Bands are currently **informational only** (shown on the Price Chart page) — not yet part of the model's input features. See [Roadmap](#roadmap) below.
+> **Note on indicators:** RSI and SMA are fed into the LSTM prediction model. MACD and Bollinger Bands are currently **informational only** (shown on the Price Chart page) and are not yet part of the model's input features.
 
 ### Navigating the app
 The app has four pages, switchable via the buttons at the top:
@@ -69,35 +69,6 @@ You'll also need these files in the root directory:
 model.h5      – Trained LSTM model
 scaler.pkl    – MinMaxScaler used for feature scaling
 ```
-
-### 3. (Optional) Enable Live Headlines
-The live-headline picker needs a free NewsData.io API key:
-
-1. Get a free key at [newsdata.io](https://newsdata.io/)
-2. Set it using **one** of these methods:
-
-   **Option A — `.env` file (recommended, works the same on every OS):**
-   A `.env` file is already included in this repo as a template. Open it and replace the placeholder:
-   ```
-   NEWSDATA_API_KEY=your_key_here
-   ```
-   `fin.py` loads this automatically via `python-dotenv` — no terminal commands needed.
-   ⚠️ `.env` is already listed in `.gitignore`, so your real key won't get committed. Never remove it from `.gitignore`.
-
-   **Option B — environment variable for the current terminal session:**
-   ```powershell
-   # Windows PowerShell
-   $env:NEWSDATA_API_KEY="your_key_here"
-   ```
-   ```bash
-   # macOS/Linux
-   export NEWSDATA_API_KEY="your_key_here"
-   ```
-
-   **Option C — Streamlit Cloud:** add `NEWSDATA_API_KEY` under your app's **Secrets** in the dashboard.
-
-If you skip this step, the app still works fully via manual headline/URL paste — live headlines will just show a note that the key isn't set.
-
 ### 4. Run the Streamlit App
 ```
 streamlit run fin.py
@@ -171,28 +142,7 @@ news2nifty/
 ```
 
 ---
-
-## Roadmap
-
-- [ ] Retrain the LSTM with MACD/Bollinger Bands included as model input features (currently display-only)
-- [ ] Evaluate FinBERT vs. VADER for sentiment scoring on a recent data slice
-- [ ] Backtesting module to validate directional accuracy against historical headlines
-- [ ] Multi-index support (Bank Nifty, Sensex)
-
----
-
-## Changelog
-
-- **Added:** Multi-page navigation (Live Market Pulse, Analyze Impact, Price Chart, Prediction History)
-- **Added:** "Live Market Pulse" flagship page — sentiment-scored headline cards with one-click analysis
-- **Added:** Interactive Plotly price chart with SMA-20/Bollinger overlay, RSI subplot, and projected-prediction marker
-- **Added:** In-session Prediction History log and chart (price-at-prediction vs. predicted price)
-- **Added:** Live headline sourcing via NewsData.io, with graceful fallback to manual paste
-- **Added:** MACD and Bollinger Bands as informational technical indicators
-- **Fixed:** Chrome driver options bug in the historical scraping notebook (custom flags were previously being silently ignored)
-- **Fixed:** yfinance MultiIndex column handling and stale/incompatible version issues
-- **Cleaned:** Consolidated 10+ duplicated scraping cells into a single resumable extraction loop
-
----
+Made by Jaismeen Kaur
+230121030
 
 This project is for educational and research purposes only. It is not financial advice. Always do your own due diligence before making any investment decisions.
