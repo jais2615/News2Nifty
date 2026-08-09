@@ -147,7 +147,11 @@ def fetch_live_headlines(max_results=30, max_pages=3):
     cached function, so it only changes when a real API call happens (cache
     miss) — a reliable way to prove to the user whether 'refresh' actually
     re-fetched, versus NewsData's own feed simply not having new articles."""
-    fetched_at = pd.Timestamp.now()
+    # Explicitly IST — pd.Timestamp.now() alone uses the SERVER's local
+    # clock, which is UTC (or something else) on Streamlit Cloud, not your
+    # timezone. Pinning to Asia/Kolkata keeps this correct regardless of
+    # where the app is actually hosted.
+    fetched_at = pd.Timestamp.now(tz="Asia/Kolkata")
     if not NEWSDATA_API_KEY:
         return [], fetched_at
     headlines = []
@@ -329,8 +333,10 @@ if st.session_state.page == "pulse":
 
         with ts_col:
             st.caption(
-                f"Last fetched at {fetched_at.strftime('%H:%M:%S')} "
-              
+                f"Last fetched at {fetched_at.strftime('%H:%M:%S')} IST — fetches up to 3 pages "
+                "(~30 headlines) per refresh, cached for 10 minutes. This timestamp only changes "
+                "on a real API call, not on page reruns. Identical headlines after refreshing "
+                "usually just means NewsData's feed hasn't published anything new in that window."
             )
 
         if not live_headlines:
@@ -395,7 +401,7 @@ if st.session_state.page == "pulse":
                     """, unsafe_allow_html=True)
 
                     st.session_state.prediction_history.append({
-                        "timestamp": pd.Timestamp.now(),
+                        "timestamp": pd.Timestamp.now(tz="Asia/Kolkata"),
                         "headline": f"[Aggregate of {len(scored)} live headlines]",
                         "sentiment": avg_sentiment,
                         "price_at_prediction": current_price,
@@ -503,7 +509,7 @@ elif st.session_state.page == "analyze":
         # Log this prediction so it shows up on the Price Chart (as a projected
         # point) and the Prediction History page.
         st.session_state.prediction_history.append({
-            "timestamp": pd.Timestamp.now(),
+            "timestamp": pd.Timestamp.now(tz="Asia/Kolkata"),
             "headline": headline,
             "sentiment": sentiment,
             "price_at_prediction": current_price,
