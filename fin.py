@@ -333,10 +333,7 @@ if st.session_state.page == "pulse":
 
         with ts_col:
             st.caption(
-                f"Last fetched at {fetched_at.strftime('%H:%M:%S')} IST — fetches up to 3 pages "
-                "(~30 headlines) per refresh, cached for 10 minutes. This timestamp only changes "
-                "on a real API call, not on page reruns. Identical headlines after refreshing "
-                "usually just means NewsData's feed hasn't published anything new in that window."
+                f"Last fetched at {fetched_at.strftime('%H:%M:%S')} IST"
             )
 
         if not live_headlines:
