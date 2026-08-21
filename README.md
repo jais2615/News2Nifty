@@ -105,7 +105,7 @@ streamlit run fin.py
 4. Try a URL instead of raw text — the app should extract the headline automatically and show it in an info box before you click Analyze.
 
 ### Test the Price Chart page
-1. Go to ** Price Chart**.
+1. Go to **Price Chart**.
 2. Confirm RSI, MACD, and Bollinger %B metrics show real numbers, not blank/error states.
 3. Confirm the chart renders with a blue price line, an orange dotted SMA-20 line, and a shaded Bollinger Band region.
 4. After running at least one prediction on the Analyze page, revisit this chart — you should see a dashed star-marked line projecting from the last actual close to your predicted price.
