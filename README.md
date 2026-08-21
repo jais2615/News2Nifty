@@ -4,6 +4,12 @@
 
 ---
 
+## Live Demo
+
+The complete project is deployed and available here:
+
+**[News2Nifty — Live Application](https://news2nifty.streamlit.app/)**
+
 ## Key Features
 
 - **Live Market Pulse** (flagship page) — recent NIFTY/Sensex/RBI-relevant headlines, sentiment-scored live with color-coded badges, one-click "Analyze →" straight into the impact prediction
@@ -54,7 +60,7 @@ python-dotenv==1.0.1
 
 ### 1. Clone the Repository
 ```
-git clone https://github.com/yourusername/news2nifty.git
+git clone https://github.com/jais2615/news2nifty.git
 cd news2nifty
 ```
 
@@ -81,12 +87,12 @@ streamlit run fin.py
 ### Basic functionality check
 1. Run the app (`streamlit run fin.py`) — it should open in your browser at `http://localhost:8501`.
 2. Confirm the **current NIFTY 50 price** loads at the top. If it shows a fallback value (₹23,851.65) instead of a live number, check your internet connection or `yfinance`'s status.
-3. You should land on **📰 Live Market Pulse** by default. If headlines don't load, check your `NEWSDATA_API_KEY` setup.
+3. You should land on ** Live Market Pulse** by default. If headlines don't load, check your `NEWSDATA_API_KEY` setup.
 
 ### Test the Live Market Pulse → Analyze flow
 1. On the Market Pulse page, confirm each headline shows a colored sentiment badge (green/red/gray) with a score.
 2. Click **"Analyze →"** on any headline card.
-3. You should land on the **🎯 Analyze Impact** page with that headline pre-filled and a green "Using: ..." confirmation.
+3. You should land on the ** Analyze Impact** page with that headline pre-filled and a green "Using: ..." confirmation.
 4. Click **Analyze Impact** — you should see a VADER sentiment score, a predicted price impact, and a projected price.
 
 ### Test manual headline input
@@ -99,14 +105,14 @@ streamlit run fin.py
 4. Try a URL instead of raw text — the app should extract the headline automatically and show it in an info box before you click Analyze.
 
 ### Test the Price Chart page
-1. Go to **📊 Price Chart**.
+1. Go to ** Price Chart**.
 2. Confirm RSI, MACD, and Bollinger %B metrics show real numbers, not blank/error states.
 3. Confirm the chart renders with a blue price line, an orange dotted SMA-20 line, and a shaded Bollinger Band region.
 4. After running at least one prediction on the Analyze page, revisit this chart — you should see a dashed star-marked line projecting from the last actual close to your predicted price.
 
 ### Test Prediction History
 1. Run 2–3 predictions on different headlines from the Analyze page.
-2. Go to **🕒 Prediction History** — confirm each shows up in the chart and the table below it, with correct timestamps and sentiment scores.
+2. Go to ** Prediction History** — confirm each shows up in the chart and the table below it, with correct timestamps and sentiment scores.
 3. Click **"Clear history"** and confirm the log empties.
 
 ### Sanity-check the prediction direction
@@ -135,14 +141,20 @@ streamlit run fin.py
 news2nifty/
 ├── fin.py                  # Streamlit frontend and prediction logic
 ├── data scraping.ipynb     # Historical headline scraping (Selenium)
+├── news_sentiment_analysis_1.ipynb
+├── test_yfinance.py
 ├── model.h5                # Pretrained LSTM model
 ├── scaler.pkl              # Feature scaler
+├── vader_nifty_cleaned_filled.csv
 ├── requirements.txt
 └── README.md                # You're here
 ```
 
 ---
-Made by Jaismeen Kaur
-230121030
+Made by
+
+Jaismeen Kaur       - 230121030
+Shrish Uttarwar     - 230101108
+Jasvindar Singh     - 230121031
 
 This project is for educational and research purposes only. It is not financial advice. Always do your own due diligence before making any investment decisions.
