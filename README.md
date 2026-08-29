@@ -153,7 +153,7 @@ news2nifty/
 ---
 Made by
 
-## 7. Contributors
+## Contributors
 
 * **Shrish Uttarwar** — [GitHub](https://github.com/shrish-29331)
 * **Jasvindar Singh** — [GitHub](https://github.com/jasvindar123)
