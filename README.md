@@ -153,8 +153,11 @@ news2nifty/
 ---
 Made by
 
-Jaismeen Kaur       - 230121030
-Shrish Uttarwar     - 230101108
-Jasvindar Singh     - 230121031
+## 7. Contributors
 
+* **Shrish Uttarwar** — [GitHub](https://github.com/shrish-29331)
+* **Jasvindar Singh** — [GitHub](https://github.com/jasvindar123)
+* **Jaismeen Kaur** — [GitHub](https://github.com/jais2615)
+
+---
 This project is for educational and research purposes only. It is not financial advice. Always do your own due diligence before making any investment decisions.
